@@ -8,15 +8,7 @@ import { useAuth } from "@/hooks/use-auth";
 const PostPage = () => {
   const { isAuthenticated } = useAuth(true);
 
-  if (isAuthenticated === null) {
-    return (
-      <div className="flex min-h-screen items-center justify-center">
-        <Spinner />
-      </div>
-    );
-  }
-
-  if (isAuthenticated === false) {
+  if (isAuthenticated === null || isAuthenticated === false) {
     return (
       <div className="flex min-h-screen items-center justify-center">
         <Spinner />
